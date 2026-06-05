@@ -1,0 +1,99 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "ws-ai-register",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "1",
+      "name": "Webhook Nhận Data",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [100, 300]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "NHẬP_ID_CỦA_GOOGLE_SHEET_VÀO_ĐÂY",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Sheet1",
+          "mode": "name"
+        },
+        "mappingMode": "defineBelow",
+        "valuesUi": {
+          "mappingValues": [
+            {
+              "column": "Họ và Tên",
+              "value": "={{ $json.body.fullname }}"
+            },
+            {
+              "column": "Email",
+              "value": "={{ $json.body.email }}"
+            },
+            {
+              "column": "Số Điện Thoại",
+              "value": "={{ $json.body.phone }}"
+            },
+            {
+              "column": "Timestamp",
+              "value": "={{ $now }}"
+            },
+            {
+              "column": "Trạng Thái",
+              "value": "Mới"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2",
+      "name": "Lưu Data vào Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.1,
+      "position": [300, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{\n  \"status\": \"success\",\n  \"redirectUrl\": \"thankyou.html\"\n}",
+        "options": {}
+      },
+      "id": "3",
+      "name": "Phản hồi về Landing Page",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [500, 300]
+    }
+  ],
+  "connections": {
+    "Webhook Nhận Data": {
+      "main": [
+        [
+          {
+            "node": "Lưu Data vào Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lưu Data vào Sheet": {
+      "main": [
+        [
+          {
+            "node": "Phản hồi về Landing Page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

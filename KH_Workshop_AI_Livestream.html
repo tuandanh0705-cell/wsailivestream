@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>BÁN HÀNG LÚC ĐANG NGỦ - AI LIVESTREAM THAY BẠN 24/7</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; font-size: 11.5px; background: #fff; }
+
+  table { width: 100%; border-collapse: collapse; }
+  td, th {
+    border: 1px solid #bbb;
+    padding: 7px 9px;
+    vertical-align: top;
+    line-height: 1.6;
+  }
+
+  /* TITLE */
+  .title-1 {
+    background: #FFD966;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    color: #7F2000;
+    padding: 10px;
+    letter-spacing: 0.5px;
+  }
+  .title-2 {
+    background: #FFE599;
+    font-size: 12.5px;
+    font-weight: bold;
+    text-align: center;
+    color: #7F2000;
+    padding: 7px;
+  }
+  .title-3 {
+    background: #F4B942;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    padding: 5px;
+    letter-spacing: 1px;
+  }
+
+  /* BANNER */
+  .banner td {
+    background: #FFF9E6;
+    font-size: 11px;
+    color: #333;
+    padding: 9px 14px;
+    border: 1px solid #E69B00;
+    line-height: 1.7;
+  }
+
+  /* COLUMN HEADERS */
+  .col-note   { background: #BDD7EE; font-weight: bold; text-align: center; font-size: 11px; }
+  .col-mt     { background: #FFD966; font-weight: bold; text-align: center; font-size: 11px; }
+  .col-nd     { background: #A9D18E; font-weight: bold; text-align: center; font-size: 11px; }
+  .col-gc     { background: #F4B183; font-weight: bold; text-align: center; font-size: 11px; }
+  .col-dx     { background: #C9B1D9; font-weight: bold; text-align: center; font-size: 11px; }
+
+  /* WS LABEL */
+  .ws-lbl {
+    background: #2E75B6;
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+    padding: 8px 4px;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    white-space: nowrap;
+  }
+
+  /* CELLS */
+  .mt-cell  { background: #FFFDE7; }
+  .nd-cell  { background: #F0FFF4; }
+  .gc-cell  { background: #FFF5EE; }
+  .dx-cell  { background: #FAF0FF; }
+
+  .ws-name { font-weight: bold; font-size: 13px; color: #7F2000; margin-bottom: 4px; }
+  .ws-sub  { font-size: 11px; color: #444; font-style: italic; margin-bottom: 8px; }
+  .ws-meta { font-size: 11px; color: #1F4E79; font-weight: bold; margin-top: 4px; }
+
+  h4 { color: #1F4E79; margin: 8px 0 3px; font-size: 11.5px; border-bottom: 1px dotted #aaa; padding-bottom: 2px; }
+  h5 { color: #375623; margin: 6px 0 2px; font-size: 11px; }
+  ul { padding-left: 16px; margin-bottom: 4px; }
+  li { margin-bottom: 2px; }
+  .indent { padding-left: 14px; }
+
+  .group-title { font-weight: bold; color: #7F2000; margin: 8px 0 3px; font-size: 11.5px; }
+  .group-label { background: #F4B183; padding: 1px 5px; border-radius: 2px; font-weight: bold; font-size: 10px; }
+  .group-label.blue { background: #9DC3E6; }
+  .group-label.purple { background: #C9B1D9; }
+
+  .tag { display:inline-block; background:#4472C4; color:#fff; border-radius:3px; padding:1px 5px; font-size:10px; margin:2px 1px; }
+  .tag.green { background:#548235; }
+  .tag.orange{ background:#C55A11; }
+
+  .box { border-radius:4px; padding:6px 9px; margin:6px 0; font-size:11px; }
+  .box-green  { background:#E2EFDA; border:1px solid #70AD47; }
+  .box-blue   { background:#DDEEFF; border:1px solid #4472C4; }
+  .box-orange { background:#FCE4D6; border:1px solid #F4B183; }
+  .box-yellow { background:#FFF9C4; border:1px solid #F0C030; }
+
+  .timeline { font-family: monospace; font-size:10.5px; background:#f7f7f7; border:1px solid #ddd; border-radius:3px; padding:7px 10px; margin:5px 0; line-height:1.8; }
+
+  .footer td { background:#F2F2F2; color:#888; font-size:10px; text-align:center; padding:5px; }
+  .sep td { background:#2E75B6; color:#fff; font-weight:bold; font-size:11.5px; text-align:center; padding:6px; }
+</style>
+</head>
+<body>
+
+<table>
+
+  <!-- ===== TIÊU ĐỀ ===== -->
+  <tr><td colspan="6" class="title-1">WORKSHOP AI LIVESTREAM — META ECOM UNI</td></tr>
+  <tr><td colspan="6" class="title-2">🌙 "BÁN HÀNG LÚC ĐANG NGỦ — AI LIVESTREAM THAY BẠN 24/7"</td></tr>
+  <tr><td colspan="6" class="title-3">KHAI THÁC DIỄN GIẢ</td></tr>
+
+  <!-- ===== BANNER ===== -->
+  <tr class="banner">
+    <td colspan="6">
+      <strong>Đối tượng:</strong> KOL/KOC đang livestream thủ công muốn tự động hóa, chủ shop/brand muốn giảm chi phí vận hành live, người mới muốn bắt đầu kiếm tiền bằng AI Livestream mà không cần kinh nghiệm kỹ thuật.<br>
+      <strong>Thời lượng:</strong> 1 buổi, 90–120 phút (online qua nền tảng Zoom) &nbsp;|&nbsp;
+      <strong>Ngày:</strong> Chủ Nhật, 08/06/2026 &nbsp;|&nbsp; <strong>Giờ:</strong> 20:00 – 22:00 &nbsp;|&nbsp; <strong>Học phí:</strong> Miễn phí<br>
+      <strong>Sản phẩm trung tâm:</strong> Khóa học "Hệ Thống AI Livestream" (4 buổi) — Vừa là lộ trình đào tạo, vừa là sản phẩm Early Bird 799.000đ dành cho người đăng ký trong WS.
+    </td>
+  </tr>
+
+  <!-- ===== COLUMN HEADERS ===== -->
+  <tr>
+    <td class="col-note" style="width:4%">Note cùng tên chủ đề WS</td>
+    <td class="col-mt"   style="width:18%">MỤC TIÊU</td>
+    <td class="col-nd"   style="width:33%">ND CHÍNH</td>
+    <td class="col-gc"   style="width:24%">GHI CHÚ</td>
+    <td class="col-dx"   style="width:21%">ĐỀ XUẤT</td>
+  </tr>
+
+  <!-- ===== WS1 ROW ===== -->
+  <tr>
+    <!-- LABEL -->
+    <td class="ws-lbl">WS1</td>
+
+    <!-- MỤC TIÊU -->
+    <td class="mt-cell">
+      <div class="ws-name">🌙 BÁN HÀNG LÚC ĐANG NGỦ<br>— AI LIVESTREAM THAY BẠN 24/7</div>
+      <div class="ws-sub">"Bạn ngủ, AI bạn đang live — chốt đơn, trả lời comment, không cần bạn có mặt"</div>
+
+      <div class="ws-meta">📅 Thời gian: 20:00 – 22:00<br>Chủ Nhật, 08/06/2026</div>
+      <div class="ws-meta">📡 Nền tảng: Zoom (Pro/Webinar)</div>
+      <div class="ws-meta">🆓 Học phí: Miễn phí hoàn toàn</div>
+      <div class="ws-meta">👥 Không giới hạn người tham dự</div>
+
+      <hr style="margin:8px 0; border-color:#ddd;">
+
+      <div style="font-weight:bold; color:#7F2000; margin-bottom:4px;">Mục tiêu cốt lõi</div>
+      Giúp người tham gia <strong>thấy tận mắt</strong> AI Livestream hoạt động thực tế, hiểu tại sao đây là xu hướng không thể bỏ qua, và có đủ niềm tin để bắt đầu xây hệ thống bán hàng tự động cho chính mình.
+
+      <div class="box box-green" style="margin-top:10px;">
+        <strong>KPI chuyển đổi:</strong><br>
+        ✅ ≥ 500 người đăng ký WS<br>
+        ✅ ≥ 250 người tham dự live<br>
+        ✅ ≥ 75 đơn Early Bird trong 48h<br>
+        ✅ Doanh thu: ≥ 60 triệu đồng
+      </div>
+
+      <div class="box box-orange" style="margin-top:6px;">
+        <strong>Early Bird:</strong> 799.000đ<br>
+        <strong>Giá gốc:</strong> 1.000.000đ<br>
+        <strong>Deadline:</strong> 22:00 ngày 10/06/2026
+      </div>
+    </td>
+
+    <!-- NỘI DUNG CHÍNH -->
+    <td class="nd-cell">
+
+      <div class="timeline">
+[00:00–00:10]  PRE-SHOW — Poll, warm-up, join Zalo group
+[00:10–00:25]  PHẦN 1 — Hook: Demo AI Livestream ngay đầu buổi
+[00:25–00:55]  PHẦN 2 — Nội dung giá trị: Framework C.R.E.A.T.E
+[00:55–01:10]  PHẦN 3 — Demo Live: AI phản hồi comment real-time
+[01:10–01:25]  PHẦN 4 — Roadmap khóa học 4 buổi
+[01:25–01:45]  PHẦN 5 — Pitch & Chốt sale Early Bird 799k
+[01:45–01:55]  PHẦN 6 — Q&A xử lý objection
+[01:55–02:00]  CLOSE — Nhắc deadline + link đăng ký
+      </div>
+
+      <h4>1. Toàn cảnh xu hướng AI Livestream 2025–2026</h4>
+      <ul>
+        <li>AI Livestream chiếm 40% TikTok Shop Trung Quốc 2024</li>
+        <li>Làn sóng AI Livestream đang vào Việt Nam — ai làm trước thắng lớn</li>
+        <li>So sánh: Livestream thủ công vs AI Livestream (chi phí, thời gian, hiệu quả)</li>
+      </ul>
+
+      <h4>2. Demo Shock — AI Livestream chạy thực tế</h4>
+      <ul>
+        <li>Bật AI livestream ngay trước mặt người tham dự (không báo trước)</li>
+        <li>AI nói chuyện, phản hồi comment real-time trong 2–3 phút</li>
+        <li>Show dashboard: số người xem, đơn hàng, conversion rate</li>
+        <li>Show backend: đơn giản, không cần code, không cần studio</li>
+      </ul>
+
+      <h4>3. Framework C.R.E.A.T.E (trao miễn phí C + R)</h4>
+      <ul>
+        <li><strong>C – Clone:</strong> Nhân bản hình ảnh + giọng nói của chính bạn</li>
+        <li><strong>R – Rehearse:</strong> Luyện kịch bản bán hàng cho AI</li>
+        <li><strong>E – Equip:</strong> Setup background + ánh sáng ảo <span style="color:#888;font-style:italic">[Khóa học]</span></li>
+        <li><strong>A – Automate:</strong> Tự động hóa quy trình vận hành <span style="color:#888;font-style:italic">[Khóa học]</span></li>
+        <li><strong>T – Track:</strong> Theo dõi hiệu suất & tối ưu <span style="color:#888;font-style:italic">[Khóa học]</span></li>
+        <li><strong>E – Expand:</strong> Mở rộng đa phòng live song song <span style="color:#888;font-style:italic">[Khóa học]</span></li>
+      </ul>
+      <div style="font-size:10.5px;color:#666;font-style:italic;margin-bottom:6px;">→ Trao C + R miễn phí tại WS · A + T + E = nội dung khóa học đầy đủ</div>
+
+      <h4>4. Roadmap 4 buổi khóa học — Bridge vào sản phẩm</h4>
+      <ul>
+        <li><strong>Buổi 01:</strong> Nền tảng & Tư duy AI Livestream</li>
+        <li><strong>Buổi 02:</strong> Kịch bản bán hàng bằng AI</li>
+        <li><strong>Buổi 03:</strong> Background Live bằng AI</li>
+        <li><strong>Buổi 04:</strong> Quy trình triển khai thực chiến</li>
+      </ul>
+      <div style="font-size:10.5px;color:#666;font-style:italic;margin-bottom:6px;">→ "Hôm nay tôi cho bạn thấy WHAT & WHY — Khóa học sẽ cho bạn HOW"</div>
+
+      <h4>5. Pitch & Chốt Sale Early Bird</h4>
+      <ul>
+        <li>Công bố giá Early Bird 799k (giảm 201k so với giá gốc 1tr)</li>
+        <li>Bonus stack độc quyền cho người đăng ký trong WS:
+          <ul>
+            <li>🎁 SOP Whitelist — tài liệu chính sách platform</li>
+            <li>🎁 50 prompt viết kịch bản AI Livestream</li>
+            <li>🎁 Checklist setup kỹ thuật từ 0</li>
+          </ul>
+        </li>
+        <li>Countdown 48h hiển thị trực tiếp trên màn hình</li>
+        <li>Hướng dẫn đăng ký ngay trong Zoom chat</li>
+      </ul>
+
+      <h4>6. Q&A — Xử lý objection thường gặp</h4>
+      <ul>
+        <li>AI có vi phạm chính sách TikTok/Shopee không?</li>
+        <li>Không biết công nghệ có học được không?</li>
+        <li>Chi phí setup khoảng bao nhiêu?</li>
+        <li>Bao lâu thì có kết quả thực tế?</li>
+        <li>Sau khi học xong ai hỗ trợ nếu gặp lỗi?</li>
+      </ul>
+    </td>
+
+    <!-- GHI CHÚ -->
+    <td class="gc-cell">
+
+      <div style="font-weight:bold; color:#7F2000; font-size:12px; margin-bottom:8px;">ĐỐI TƯỢNG CHÍNH</div>
+
+      <!-- Group 1 -->
+      <div class="group-title"><span class="group-label">1</span> KOL / KOC đang "chạy không kịp thở"</div>
+      <ul>
+        <li><strong>Đặc điểm:</strong> Livestream 6–8 tiếng/ngày, thu nhập 15–80 triệu/tháng nhưng đang chạm trần vì bị giới hạn bởi thời gian</li>
+        <li><strong>Nỗi đau:</strong> Kiệt sức, không scale được, sợ ngày nào không live là ngày đó mất doanh thu</li>
+        <li><strong>Mong đợi tại WS:</strong> Tìm ra cách để AI chạy thay mình, giải phóng thời gian trong khi thu nhập vẫn tăng</li>
+      </ul>
+
+      <hr style="margin:8px 0; border-style:dotted;">
+
+      <!-- Group 2 -->
+      <div class="group-title"><span class="group-label blue">2</span> Chủ shop / Brand không muốn phụ thuộc KOC</div>
+      <ul>
+        <li><strong>Đặc điểm:</strong> Shop 500M–50B/tháng, đang trả 5–50 triệu/tháng cho KOC mà ROI không ổn định</li>
+        <li><strong>Nỗi đau:</strong> Chi phí KOC tăng cao, chất lượng livestream không kiểm soát được, KOC "bỏ ngang" là tắt doanh thu</li>
+        <li><strong>Mong đợi tại WS:</strong> Xây hệ thống AI Livestream tự vận hành, giảm 70% phụ thuộc vào con người</li>
+      </ul>
+
+      <hr style="margin:8px 0; border-style:dotted;">
+
+      <!-- Group 3 -->
+      <div class="group-title"><span class="group-label purple">3</span> Người mới muốn bắt đầu bằng AI ngay</div>
+      <ul>
+        <li><strong>Đặc điểm:</strong> Chưa có kênh, chưa có sản phẩm nhưng đang tìm cơ hội kiếm tiền online bền vững</li>
+        <li><strong>Nỗi đau:</strong> Không biết bắt đầu từ đâu, sợ đầu tư nhiều mà không có kết quả</li>
+        <li><strong>Mong đợi tại WS:</strong> Hiểu AI Livestream là gì, cần bao nhiêu vốn, và có lộ trình rõ ràng để bắt đầu đúng</li>
+      </ul>
+
+      <hr style="margin:8px 0;">
+
+      <div style="font-weight:bold; color:#1F4E79; font-size:11px; margin-bottom:5px;">📣 KÊNH QUẢNG BÁ</div>
+      <div class="tag">J2TEAM 727K</div>
+      <div class="tag">Phổ Cập AI 635K</div>
+      <div class="tag green">Group Ecom lớn</div>
+      <div class="tag green">TikTok / Reels</div>
+      <div class="tag orange">Zalo list cũ</div>
+      <div class="tag orange">FB cá nhân</div>
+
+      <div class="timeline" style="margin-top:8px;">
+D-7 (01/6): Mở form + Announcement
+D-6 (02/6): Seeding cộng đồng lớn đợt 1
+D-5 (03/6): Video teaser #1 TikTok/Reels
+D-4 (04/6): Seeding đợt 2 + Story countdown
+D-3 (05/6): Blast Zalo/email cho list cũ
+D-2 (06/6): Video teaser #2
+D-1 (07/6): Nhắc nhở + Test kỹ thuật toàn bộ
+D-0 (08/6): 🌙 WORKSHOP DIỄN RA (20:00)
+09–10/6:   Follow-up Early Bird 48h
+10/6 22:00: ⏰ Đóng Early Bird 799k
+      </div>
+    </td>
+
+    <!-- ĐỀ XUẤT -->
+    <td class="dx-cell">
+
+      <div style="font-weight:bold; color:#5B2C8D; font-size:12px; margin-bottom:8px;">💡 ĐỀ XUẤT CHIẾN LƯỢC</div>
+
+      <h4>1. Mở đầu = Demo Shock — không giải thích trước</h4>
+      <ul>
+        <li>KHÔNG bắt đầu bằng tự giới thiệu hay slide</li>
+        <li>Bật AI Livestream ngay phút đầu tiên — để hình ảnh nói thay lời</li>
+        <li>Tạo khoảnh khắc "ồ" trước khi giải thích bất cứ điều gì</li>
+        <li>Hỏi chat: <em>"Các bạn có thấy gì lạ không?"</em> → tạo engagement ngay</li>
+      </ul>
+
+      <h4>2. Trao giá trị THẬT — không chỉ teaser</h4>
+      <ul>
+        <li>Trao C + R của framework C.R.E.A.T.E thực sự dùng được</li>
+        <li>Người tham dự phải có thứ áp dụng ngay sau WS</li>
+        <li>→ Tạo cảm giác "nợ" → tăng tỷ lệ chuyển đổi khóa học</li>
+      </ul>
+
+      <h4>3. Zalo Group ngay trong WS</h4>
+      <ul>
+        <li>Yêu cầu join Zalo group ngay lúc warm-up (00:00–00:10)</li>
+        <li>Gửi tài liệu C + R qua Zalo ngay sau WS → giữ người ở lại group</li>
+        <li>Dùng Zalo remarketing 48h Early Bird sau WS</li>
+      </ul>
+
+      <h4>4. Script chốt sale — tinh tế, không áp lực</h4>
+      <ul>
+        <li>Dùng bridge: <em>"Hôm nay là WHAT & WHY — Khóa học là HOW"</em></li>
+        <li>Countdown timer 48h hiện trực tiếp trên màn hình lúc pitch</li>
+        <li>Đọc to link đăng ký + nhắc Mod ghim link trong chat</li>
+      </ul>
+
+      <h4>5. Follow-up 48h sau WS</h4>
+      <ul>
+        <li>Gửi replay + tài liệu ngay trong đêm 08/06</li>
+        <li>Nhắc Early Bird lúc 12:00 ngày 09/06 (còn ~10 tiếng)</li>
+        <li>Nhắc lần cuối 20:00 ngày 10/06 (còn 2 tiếng)</li>
+        <li>Nhắn Zalo 1-1 cho lead nóng (hỏi nhiều, tương tác nhiều)</li>
+      </ul>
+
+      <h4>6. Bổ sung giá trị dài hạn</h4>
+      <ul>
+        <li>Chatbot GPT hỗ trợ fix lỗi tự động cho học viên sau khi mua</li>
+        <li>Gamification: tặng quà khi HV đăng bài kết quả, share lên group</li>
+        <li>Demo kết quả cuối ngay ở Buổi 01 ("phủ đầu bằng output")</li>
+      </ul>
+
+      <div class="box box-yellow" style="margin-top:8px;">
+        <strong>⚙️ Kỹ thuật cần chuẩn bị:</strong><br>
+        • Zoom Pro/Webinar (≥ 300 người)<br>
+        • OBS Studio (record + stream cùng lúc)<br>
+        • Mic rời + đèn ring light<br>
+        • Backup: hotspot + máy phụ<br>
+        • Test toàn bộ trước D-1
+      </div>
+    </td>
+  </tr>
+
+  <!-- ===== QUẢN TRỊ RỦI RO TỔNG THỂ KHÓA HỌC ===== -->
+  <tr>
+    <td class="ws-lbl" style="background:#C55A11;">RISK</td>
+    <td colspan="5" style="background:#FFF9F5; padding:15px; border-bottom:1px solid #bbb;">
+      <div style="font-weight:bold; color:#C55A11; font-size:13px; margin-bottom:10px; text-align:center; letter-spacing:0.5px;">
+        ⚠️ QUẢN TRỊ RỦI RO & PHƯƠNG ÁN DỰ PHÒNG TỔNG THỂ DỰ ÁN KHÓA HỌC
+      </div>
+      
+      <table style="width:100%; border:none; margin-top:5px; border-collapse:collapse;">
+        <tr style="background:transparent;">
+          <td style="width:33%; border:none; padding:0 15px; border-right:1px dotted #ccc;">
+            <h4 style="color:#C55A11; border-bottom:none;">1. Rủi ro Nền tảng & Công nghệ</h4>
+            <ul style="padding-left:12px;">
+              <li><strong>Sự cố:</strong> Nền tảng (TikTok, Shopee) siết luật, cấm AI. Tool AI bên thứ 3 (trong giáo trình) lỗi, sập hoặc tăng giá đột biến.</li>
+              <li><strong>Xử lý:</strong> Xây dựng khung giáo trình tập trung vào "Tư duy" (như C.R.E.A.T.E) thay vì chỉ cầm tay chỉ việc 1 công cụ. Luôn có danh sách 2-3 tool dự phòng để học viên dùng thay thế.</li>
+              <li><strong>Dự phòng:</strong> Cập nhật bản tin "Platform Update" cho học viên. Dạy cách lách luật an toàn (chạy bán tự động, xen kẽ người thật và AI).</li>
+            </ul>
+          </td>
+          <td style="width:33%; border:none; padding:0 15px; border-right:1px dotted #ccc;">
+            <h4 style="color:#C55A11; border-bottom:none;">2. Rủi ro Vận hành & Support</h4>
+            <ul style="padding-left:12px;">
+              <li><strong>Sự cố:</strong> Quá tải khâu support do học viên yếu IT, hoặc khách làm không ra kết quả sinh ra tiêu cực, đòi refund.</li>
+              <li><strong>Xử lý:</strong> Soạn cực kỹ bộ SOP, checklist cài đặt từ con số 0. Quản trị kỳ vọng khách hàng ngay từ đầu: "AI là công cụ, không phải phép thuật".</li>
+              <li><strong>Dự phòng:</strong> Cài đặt 1 Chatbot (GPT/n8n) hỗ trợ tự động trên group lớp để giải đáp tức thời các lỗi kỹ thuật cơ bản của học viên 24/7.</li>
+            </ul>
+          </td>
+          <td style="width:34%; border:none; padding:0 15px;">
+            <h4 style="color:#C55A11; border-bottom:none;">3. Rủi ro Thị trường & Cạnh tranh</h4>
+            <ul style="padding-left:12px;">
+              <li><strong>Sự cố:</strong> Tool AI ngày càng dễ xài và phổ cập. Đối thủ copy giáo trình bán giá rẻ. Trend AI Livestream bị bão hòa.</li>
+              <li><strong>Xử lý:</strong> Cạnh tranh bằng "Cộng đồng & Tài nguyên" độc quyền (tặng prompt, mẫu background 3D, nguồn hàng) thay vì chỉ bán kiến thức thông thường.</li>
+              <li><strong>Dự phòng:</strong> Liên tục update version mới. Mở rộng mô hình từ Đào tạo sang làm Dịch vụ (Agency Setup AI Livestream trọn gói) cho tay to.</li>
+            </ul>
+          </td>
+        </tr>
+        
+        <!-- Hàng Rủi Ro thứ 2 -->
+        <tr style="background:transparent;">
+          <td style="width:33%; border:none; padding:15px 15px 0 15px; border-right:1px dotted #ccc; border-top:1px solid #ddd;">
+            <h4 style="color:#C55A11; border-bottom:none;">4. Rủi ro Pháp lý & Bản quyền</h4>
+            <ul style="padding-left:12px;">
+              <li><strong>Sự cố:</strong> Học viên clone trái phép hình ảnh/giọng nói người nổi tiếng bị kiện. Dính gậy bản quyền nhạc, hình ảnh.</li>
+              <li><strong>Xử lý:</strong> Đưa ngay module "Bản quyền & Đạo đức AI" vào Buổi 1. Quán triệt việc chỉ clone chính chủ hoặc người đã ký hợp đồng.</li>
+              <li><strong>Dự phòng:</strong> Cung cấp sẵn kho nhạc/background miễn phí bản quyền (Royalty-free) và form mẫu hợp đồng thuê người mẫu làm Data AI.</li>
+            </ul>
+          </td>
+          <td style="width:33%; border:none; padding:15px 15px 0 15px; border-right:1px dotted #ccc; border-top:1px solid #ddd;">
+            <h4 style="color:#C55A11; border-bottom:none;">5. Rủi ro Tài chính & Dòng tiền</h4>
+            <ul style="padding-left:12px;">
+              <li><strong>Sự cố:</strong> Chi phí Ads kéo lead đắt, CPL cao khiến biên lợi nhuận mỏng. Tỷ lệ Refund cao gây gãy dòng tiền.</li>
+              <li><strong>Xử lý:</strong> Tập trung kéo Free Traffic (Reels/TikTok) và KOC Affiliate thay vì đốt tiền Ads. Có chính sách Refund cực kỳ rõ ràng, minh bạch.</li>
+              <li><strong>Dự phòng:</strong> Có sản phẩm phễu (Tripwire giá rẻ) để bù đắp chi phí Ads mồi. Đẩy mạnh up-sale backend (bán tool, proxy, VPS) để tăng LTV.</li>
+            </ul>
+          </td>
+          <td style="width:34%; border:none; padding:15px 15px 0 15px; border-top:1px solid #ddd;">
+            <h4 style="color:#C55A11; border-bottom:none;">6. Rủi ro Thương hiệu & Uy tín</h4>
+            <ul style="padding-left:12px;">
+              <li><strong>Sự cố:</strong> Bị bóc phốt "lùa gà" nếu học xong không ai làm được. Diễn giả/KOC bị scandal ảnh hưởng khóa học.</li>
+              <li><strong>Xử lý:</strong> Truyền thông trung thực, KHÔNG hứa hẹn "chắc chắn giàu". Tập trung xây case-study thực tế từ chính học viên.</li>
+              <li><strong>Dự phòng:</strong> Xử lý khủng hoảng sớm: Có đội ngũ Social Listening. Chủ động gọi điện support 1-1 cho học viên có thái độ tiêu cực trước khi họ bóc phốt.</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr class="footer">
+    <td colspan="6">📅 Tạo: 28/05/2026 &nbsp;|&nbsp; Cập nhật: 28/05/2026 &nbsp;|&nbsp; Meta Ecom Uni — AI Livestream Workshop Planning</td>
+  </tr>
+
+</table>
+</body>
+</html>

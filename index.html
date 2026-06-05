@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BÁN HÀNG LÚC ĐANG NGỦ - AI LIVESTREAM THAY BẠN 24/7 — Meta Ecom Uni</title>
+  <meta name="description" content="Khám phá sức mạnh của AI Livestream 24/7. Tự động chốt đơn, trả lời comment ngay cả khi bạn đang ngủ. Workshop hoàn toàn miễn phí!">
+  <link rel="icon" type="image/png" href="https://noti.vn/image/new/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    // TODO: thay YOUR_PIXEL_ID rồi bỏ comment 2 dòng dưới
+    // fbq('init', 'YOUR_PIXEL_ID');
+    // fbq('track', 'PageView');
+  </script>
+
+  <style>
+    /* === CSS DARK MODE PREMIUM === */
+    :root{
+      --primary: #ED1C24; 
+      --secondary: #F7941D; 
+      --gradient: linear-gradient(135deg, #F7941D 0%, #ED1C24 100%);
+      --bg-primary: #0a0a0a;
+      --bg-secondary: #111111;
+      --bg-card: #1a1a1a;
+      --border-color: #2a2a2a;
+      --text-header: #ffffff;
+      --text-primary: #e5e7eb;
+      --text-secondary: #9ca3af;
+      --radius-md: 8px;
+      --radius-lg: 16px;
+      --radius-pill: 50px;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Roboto', Arial, sans-serif; background:var(--bg-primary); color:var(--text-primary); line-height:1.6; overflow-x:hidden;}
+    
+    .reveal{opacity:0; transform:translateY(30px); transition:all 0.8s cubic-bezier(.4,0,.2,1)}
+    .reveal.active{opacity:1; transform:translateY(0)}
+    .section-tag{display:inline-block; background:rgba(247,148,29,0.1); border: 1px solid rgba(247,148,29,0.3); color:var(--secondary); padding:.5rem 1rem; border-radius:var(--radius-pill); font-size:.85rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; margin-bottom:1rem}
+    .section-header{text-align:center; max-width:800px; margin:0 auto 3rem}
+    .section-header h2{font-size:clamp(2rem,4vw,2.5rem); font-weight:900; margin-bottom:1rem; color:var(--text-header); line-height: 1.3;}
+    .section-header h2 span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .section-header p{color:var(--text-secondary); font-size:1.1rem; line-height:1.6;}
+
+    /* Header */
+    header{position:fixed; top:0; left:0; width:100%; z-index:1000; padding:1rem 0; transition:all 0.4s; background:rgba(10,10,10,0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color);}
+    .header-container{max-width:1200px; margin:0 auto; padding:0 2rem; display:flex; justify-content:space-between; align-items:center}
+    .logo{font-size: 1.5rem; font-weight: 900; color: #fff; text-decoration: none; letter-spacing: -1px;}
+    .logo span { color: var(--primary); }
+    .nav-menu{display:flex; align-items:center; gap:2rem;}
+    .nav-link{color:var(--text-secondary); text-decoration:none; font-weight:500; transition:all .25s;}
+    .nav-link:hover{color:#fff;}
+    .btn-cta{background:var(--gradient); color:#fff; padding:.75rem 1.5rem; border-radius:var(--radius-md); text-decoration:none; font-weight:700; cursor:pointer; border:none; font-family:inherit; transition:all 0.3s; box-shadow: 0 4px 15px rgba(237,28,36,0.3);}
+    .btn-cta:hover{transform:translateY(-2px); box-shadow: 0 6px 20px rgba(247,148,29,0.4);}
+    @media(max-width:768px){.nav-menu, .header-cta-btn{display:none}}
+
+    /* Section 1: Hero */
+    .hero-simple { padding: 9rem 1rem 5rem; text-align: center; position: relative; overflow: hidden; }
+    .hero-bg-glow { position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(237,28,36,0.15) 0%, rgba(0,0,0,0) 70%); top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: -1; pointer-events: none;}
+    .hero-simple-container { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; z-index: 1;}
+    .hero-simple-title { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 900; line-height: 1.2; margin-bottom: 1.25rem; color: var(--text-header); letter-spacing: -1px;}
+    .hero-simple-title span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-simple-desc { font-size: 1.15rem; line-height: 1.6; color: var(--text-secondary); max-width: 800px; margin: 0 auto 2rem; }
+    .hero-simple-details { font-size: 1rem; line-height: 1.8; color: var(--text-primary); margin-bottom: 2.5rem; font-weight: 500; background: var(--bg-card); padding: 1.5rem 2.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color);}
+    .hero-cta-main { font-size: 1.25rem; padding: 1.2rem 3rem; text-transform: uppercase; letter-spacing: 1px; animation: pulse 2s infinite; }
+    
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(247,148,29,0.5); }
+      70% { box-shadow: 0 0 0 15px rgba(247,148,29,0); }
+      100% { box-shadow: 0 0 0 0 rgba(247,148,29,0); }
+    }
+
+    /* Countdown Timer */
+    .countdown-wrapper { margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; }
+    .countdown-item { background: var(--bg-card); border: 1px solid var(--border-color); padding: 1rem; border-radius: var(--radius-md); min-width: 80px; }
+    .countdown-value { font-size: 2rem; font-weight: 900; color: var(--secondary); line-height: 1; }
+    .countdown-label { font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; margin-top: 0.5rem; letter-spacing: 1px;}
+
+    /* General Sections */
+    .section-dark { padding: 6rem 1rem; background-color: var(--bg-primary); }
+    .section-light { padding: 6rem 1rem; background-color: var(--bg-secondary); }
+
+    /* Pain Points */
+    .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto; }
+    .pain-card { background: var(--bg-card); padding: 2.5rem 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color); transition: all 0.3s ease; position: relative; overflow: hidden; }
+    .pain-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--primary); }
+    .pain-card:hover { transform: translateY(-5px); border-color: rgba(237,28,36,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+    .pain-icon { font-size: 2.5rem; margin-bottom: 1.5rem; display: block; }
+    .pain-title { font-size: 1.25rem; font-weight: 700; color: var(--text-header); margin-bottom: 1rem; line-height: 1.4; }
+    .pain-desc { color: var(--text-secondary); font-size: 1rem; line-height: 1.6; }
+
+    /* Features Grid (Dành cho ai) */
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto; }
+    .feature-box { background: var(--bg-card); padding: 2.5rem 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color); transition: transform 0.3s ease; }
+    .feature-box:hover { transform: translateY(-5px); border-color: var(--secondary); }
+    .box-title { font-size: 1.25rem; font-weight: 700; color: var(--text-header); margin-bottom: 1.25rem; line-height: 1.4; }
+    .box-list { list-style: none; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+    .box-list li { margin-bottom: 0.75rem; position: relative; padding-left: 1.5rem; }
+    .box-list li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--secondary); font-weight: bold; }
+
+    /* Agenda */
+    .agenda-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+    .agenda-card { background: var(--bg-card); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-color); }
+    .agenda-step { display: inline-block; background: rgba(247,148,29,0.1); color: var(--secondary); padding: 0.25rem 0.75rem; border-radius: 50px; font-weight: 700; font-size: 0.85rem; margin-bottom: 1rem; border: 1px solid rgba(247,148,29,0.2);}
+    .agenda-card h4 { font-weight: 700; margin-bottom: 0.75rem; font-size: 1.2rem; color: var(--text-header); }
+    .agenda-card p { color: var(--text-secondary); }
+
+    /* Trainer */
+    .trainer-container { max-width: 1000px; margin: 0 auto; display: flex; gap: 4rem; align-items: center; background: var(--bg-card); border-radius: var(--radius-lg); padding: 3rem; border: 1px solid var(--border-color); }
+    .trainer-img { flex: 0 0 350px; border-radius: var(--radius-lg); overflow: hidden; position: relative;}
+    .trainer-img img { width: 100%; height: auto; display: block; filter: grayscale(20%); transition: filter 0.3s;}
+    .trainer-img:hover img { filter: grayscale(0%); }
+    .trainer-info { flex: 1; }
+    .trainer-name { font-size: 2rem; font-weight: 900; color: var(--text-header); margin-bottom: 0.5rem; }
+    .trainer-title { color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.5rem; font-size: 0.9rem; }
+    .trainer-desc { color: var(--text-secondary); margin-bottom: 1.5rem; }
+    .trainer-achievements { list-style: none; }
+    .trainer-achievements li { margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative; color: var(--text-primary); font-weight: 500;}
+    .trainer-achievements li::before { content: "★"; position: absolute; left: 0; color: var(--secondary); }
+    @media(max-width: 768px) { .trainer-container { flex-direction: column; gap: 2rem; padding: 2rem;} .trainer-img { flex: 1 1 auto; width: 100%; max-width: 400px; } }
+
+    /* Social Proof */
+    .proof-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+    .proof-card { background: var(--bg-primary); border-radius: var(--radius-md); padding: 1rem; border: 1px solid var(--border-color); text-align: center;}
+    .proof-card img { width: 100%; height: auto; border-radius: 4px; margin-bottom: 1rem; }
+    .proof-card p { color: var(--text-primary); font-weight: 500; font-size: 0.95rem; }
+
+    /* Gifts */
+    .gifts-container { max-width: 900px; margin: 0 auto; background: linear-gradient(180deg, rgba(237,28,36,0.05) 0%, rgba(20,20,20,1) 100%); border: 1px solid rgba(237,28,36,0.3); border-radius: var(--radius-lg); padding: 3rem; text-align: center; }
+    .gifts-total { font-size: 1.5rem; color: var(--secondary); font-weight: 900; margin-bottom: 2rem; letter-spacing: 1px; text-transform: uppercase;}
+    .gift-list { text-align: left; max-width: 600px; margin: 0 auto 2rem; }
+    .gift-item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; background: var(--bg-card); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);}
+    .gift-icon { font-size: 1.5rem; }
+    .gift-info h4 { color: var(--text-header); font-size: 1.1rem; margin-bottom: 0.25rem; }
+    .gift-info p { color: var(--text-secondary); font-size: 0.9rem; }
+
+    /* FAQ */
+    .faq-container { max-width: 800px; margin: 0 auto; }
+    .faq-item { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); margin-bottom: 1rem; overflow: hidden; }
+    .faq-question { padding: 1.25rem 1.5rem; width: 100%; text-align: left; background: none; border: none; color: var(--text-header); font-size: 1.1rem; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .faq-question::after { content: '+'; font-size: 1.5rem; color: var(--secondary); transition: transform 0.3s; }
+    .faq-item.active .faq-question::after { transform: rotate(45deg); }
+    .faq-answer { padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: all 0.3s ease; color: var(--text-secondary); background: rgba(0,0,0,0.2); }
+    .faq-item.active .faq-answer { padding: 0 1.5rem 1.25rem; max-height: 500px; margin-top: -0.5rem; }
+
+    /* Registration Section */
+    .register-section { padding: 6rem 1rem; background: var(--bg-primary); }
+    .reg-wrapper { max-width: 1000px; margin: 0 auto; display: flex; gap: 4rem; align-items: stretch; }
+    .reg-left { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .reg-left h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; margin-bottom: 1.5rem; color: var(--text-header); line-height: 1.2; }
+    .reg-left p { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.6; }
+    
+    .reg-right { flex: 1; min-width: 400px; }
+    .reg-box { background: var(--bg-card); border: 1px solid var(--secondary); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+    .reg-header { text-align: center; margin-bottom: 2rem; }
+    .reg-icon { font-size: 2.5rem; color: var(--secondary); margin-bottom: 0.5rem; display: block; }
+    .reg-header h3 { font-size: 1.8rem; font-weight: 900; color: var(--text-header); }
+    .reg-header p { color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.5rem; }
+    
+    .reg-price { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); }
+    .price-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; font-size: 1rem; color: var(--text-secondary); }
+    .price-old { text-decoration: line-through; }
+    .price-row.highlight { color: var(--text-primary); font-size: 1.15rem; font-weight: 700; }
+    .price-new { color: var(--secondary); font-size: 1.5rem; font-weight: 900; }
+
+    .form-group { margin-bottom: 1.25rem; text-align: left; }
+    .form-group input { width: 100%; padding: 1rem 1.25rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); font-family: inherit; font-size: 1rem; transition: border-color 0.3s; color: white;}
+    .form-group input:focus { outline: none; border-color: var(--secondary); }
+    .form-group.has-error input { border-color: var(--primary); }
+    .form-error { display: none; color: var(--primary); font-size: 0.85rem; margin-top: 0.4rem; }
+    .form-group.has-error .form-error { display: block; }
+    .hp-field { position: absolute; left: -9999px; opacity: 0; pointer-events: none; }
+    
+    .payment-method { margin-bottom: 1.5rem; background: rgba(247,148,29,0.1); padding: 1rem; border-radius: var(--radius-md); border: 1px solid rgba(247,148,29,0.3); display: flex; align-items: center; gap: 1rem; }
+    .payment-method span { font-size: 1.5rem; }
+    .payment-text { font-size: 0.9rem; font-weight: 500; color: var(--secondary); }
+
+    .form-submit { width: 100%; background: var(--gradient); color: #fff; border: none; padding: 1.2rem; border-radius: var(--radius-md); font-weight: 900; font-size: 1.2rem; cursor: pointer; transition: all 0.3s; text-transform: uppercase; letter-spacing: 1px;}
+    .form-submit:hover { opacity: 0.9; box-shadow: 0 5px 15px rgba(247,148,29,0.4); transform: translateY(-2px);}
+    .form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    
+    @media(max-width: 768px) { .reg-wrapper { flex-direction: column; gap: 2rem; } .reg-right { min-width: 100%; } }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="header-container">
+      <a href="#" class="logo">META <span>ECOM</span> UNI</a>
+      <nav class="nav-menu">
+        <a href="#pain" class="nav-link">Vấn đề</a>
+        <a href="#features" class="nav-link">Dành cho ai</a>
+        <a href="#agenda" class="nav-link">Nội dung</a>
+        <a href="#trainer" class="nav-link">Diễn Giả</a>
+      </nav>
+      <button class="btn-cta header-cta-btn open-modal-btn">Đăng ký giữ chỗ</button>
+    </div>
+  </header>
+
+  <!-- SECTION 1: HERO -->
+  <section class="section-dark hero-simple">
+    <div class="hero-bg-glow"></div>
+    <div class="hero-simple-container reveal">
+      <div class="section-tag">🔥 Workshop Thực Chiến Dành Cho Chủ Shop & KOC</div>
+      <h1 class="hero-simple-title">BÁN HÀNG LÚC ĐANG NGỦ <br> <span>AI LIVESTREAM THAY BẠN 24/7</span></h1>
+      <p class="hero-simple-desc">Bạn đi ngủ, AI vẫn đang lên live. Tự động tương tác, tự động chốt đơn, không biết mệt mỏi. Giải pháp giải phóng sức lao động tốt nhất 2026 đã sẵn sàng.</p>
+      
+      <div class="hero-simple-details">
+        <p>⏰ <strong>Thời gian:</strong> 20:00 – 22:00 | Thứ 5, 12/06/2026</p>
+        <p>📍 <strong>Nền tảng:</strong> Trực tuyến qua Zoom</p>
+        <p>💎 <strong>Phí tham dự:</strong> Miễn phí (Chỉ 100 slot)</p>
+      </div>
+      
+      <button class="btn-cta hero-cta-main open-modal-btn">ĐĂNG KÝ GIỮ CHỖ NGAY</button>
+      
+      <div class="countdown-wrapper">
+        <div class="countdown-item"><div class="countdown-value" id="cd-days">02</div><div class="countdown-label">Ngày</div></div>
+        <div class="countdown-item"><div class="countdown-value" id="cd-hours">14</div><div class="countdown-label">Giờ</div></div>
+        <div class="countdown-item"><div class="countdown-value" id="cd-mins">35</div><div class="countdown-label">Phút</div></div>
+        <div class="countdown-item"><div class="countdown-value" id="cd-secs">20</div><div class="countdown-label">Giây</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: PAIN POINTS (NỖI ĐAU) -->
+  <section id="pain" class="section-light">
+    <div class="reveal">
+      <div class="section-header">
+        <h2>3 CÁI BẪY CHÍ MẠNG <br><span>Khỏi Làm Livestream Còn Hơn!</span></h2>
+        <p>Bạn đã từng thức trắng đêm để lên kịch bản, live rát họng 4-5 tiếng nhưng kết quả lại...</p>
+      </div>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <span class="pain-icon">🥵</span>
+          <h3 class="pain-title">Kiệt sức vì Live Thủ Công</h3>
+          <p class="pain-desc">Phải ngồi trước ống kính 6-8 tiếng mỗi ngày. Ngày nào mệt, ốm nghỉ live là ngày đó doanh số về số 0. Bạn đang làm "nô lệ" cho thuật toán.</p>
+        </div>
+        <div class="pain-card">
+          <span class="pain-icon">💸</span>
+          <h3 class="pain-title">Chi Phí Nhân Sự Quá Cao</h3>
+          <p class="pain-desc">Thuê mẫu live, setup studio, đèn đóm, máy móc tốn hàng chục triệu mỗi tháng. Nhưng tỷ lệ chốt đơn lại phập phù không ổn định.</p>
+        </div>
+        <div class="pain-card">
+          <span class="pain-icon">📉</span>
+          <h3 class="pain-title">Bị Đối Thủ Vượt Mặt Bằng AI</h3>
+          <p class="pain-desc">Trong khi bạn đang ngủ, đối thủ dùng AI Livestream 24/7 để vét sạch tệp khách hàng ăn đêm. Chậm chân là mất thị phần vĩnh viễn.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: ĐỐI TƯỢNG -->
+  <section id="features" class="section-dark">
+    <div class="reveal">
+      <div class="section-header">
+        <h2>Hệ Thống Này <span>Dành Cho Ai?</span></h2>
+        <p>Dù bạn là người mới hay đã có hệ thống lớn, AI Livestream sẽ là đòn bẩy đột phá.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-box">
+          <h3 class="box-title">Chủ Shop / Thương Hiệu</h3>
+          <ul class="box-list">
+            <li>Cắt giảm 80% chi phí vận hành studio & nhân sự.</li>
+            <li>Tự động hóa kênh bán hàng 24/7 không cần giám sát.</li>
+            <li>Phủ sóng thương hiệu mọi khung giờ.</li>
+          </ul>
+        </div>
+        <div class="feature-box">
+          <h3 class="box-title">KOL / KOC</h3>
+          <ul class="box-list">
+            <li>Nhân bản chính khuôn mặt & giọng nói của bạn.</li>
+            <li>Live đồng thời trên nhiều kênh cùng một lúc.</li>
+            <li>Ngủ ngon giấc mà hoa hồng affiliate vẫn tăng đều.</li>
+          </ul>
+        </div>
+        <div class="feature-box">
+          <h3 class="box-title">Người Mới Bắt Đầu</h3>
+          <ul class="box-list">
+            <li>Không cần tự tin trước ống kính.</li>
+            <li>Không cần vốn nhập hàng (làm Affiliate/Dropship).</li>
+            <li>Chỉ cần biết sử dụng máy tính cơ bản.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: AGENDA -->
+  <section id="agenda" class="section-light">
+    <div class="reveal">
+      <div class="section-header">
+        <h2>Lộ Trình <span>120 Phút Thực Chiến</span></h2>
+        <p>Bỏ qua lý thuyết suông, chứng kiến AI vận hành thực tế ngay tại Workshop.</p>
+      </div>
+      <div class="agenda-grid">
+        <div class="agenda-card">
+          <span class="agenda-step">Module 1</span>
+          <h4>Demo AI Livestream Thực Tế</h4>
+          <p>Xem trực tiếp cách AI tương tác, đọc tên khách hàng và chốt đơn real-time.</p>
+        </div>
+        <div class="agenda-card">
+          <span class="agenda-step">Module 2</span>
+          <h4>Công Thức Nhân Bản C.R.E.A.T.E</h4>
+          <p>Quy trình 6 bước để clone khuôn mặt và giọng nói của bạn chuẩn xác 99%.</p>
+        </div>
+        <div class="agenda-card">
+          <span class="agenda-step">Module 3</span>
+          <h4>Bí Quyết Né Quét Từ Nền Tảng</h4>
+          <p>Thuật toán TikTok/Shopee 2026 và cách để AI live an toàn không bị khóa tài khoản.</p>
+        </div>
+        <div class="agenda-card">
+          <span class="agenda-step">Module 4</span>
+          <h4>Q&A Cùng Chuyên Gia</h4>
+          <p>Giải đáp trực tiếp bài toán cụ thể cho từng ngành hàng của bạn.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: TRAINER -->
+  <section id="trainer" class="section-dark">
+    <div class="reveal">
+      <div class="section-header">
+        <h2>Người Dẫn Đường <span>Của Bạn</span></h2>
+      </div>
+      <div class="trainer-container">
+        <div class="trainer-img">
+          <img src="2aOboQbKSylLKpkGGoGf0rVrfgTDHUF9TeXNuYl6.jpg" alt="Diễn Giả Meta Ecom Uni">
+        </div>
+        <div class="trainer-info">
+          <h3 class="trainer-name">Chuyên Gia Đào Tạo</h3>
+          <div class="trainer-title">Head of Uni tại Meta Ecom Group</div>
+          <ul class="trainer-achievements" style="margin-top: 1.5rem;">
+            <li>Chuyên gia đào tạo chứng nhận bởi TikTok Shop</li>
+            <li>Chuyên gia & Giảng viên TikTokShop tại Vinalink Academy</li>
+            <li>Chuyên gia & Giảng viên TikTokShop/Affiliate tại Meta Ecom</li>
+            <li>Đào tạo hơn +2000 Seller/KOCs về Video & Livestream</li>
+            <li>Đồng hành chiến lược bán hàng Vinshop TikTokShop cho One Mount (trực thuộc tập đoàn Vingroup)</li>
+            <li>Tổ chức cùng Brands/ KOCs Mega Livestream (GMV target: 1M+ USD ): BsCung, Michibaby, 5S Fashion,...</li>
+            <li>Speaker tại sự kiện “Vietnam Mobile Day 2023"</li>
+            <li>Đồng hành cùng hơn +600 brands Livestream: Sunhouse, mamamy, Loreal,...</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="trainer-container" style="margin-top: 3rem;">
+        <div class="trainer-img">
+          <img src="leader1.png" alt="Chuyên Gia AI Meta Ecom Uni">
+        </div>
+        <div class="trainer-info">
+          <h3 class="trainer-name">Chuyên Gia AI & Martech</h3>
+          <div class="trainer-title">AI & Martech Manager tại Meta Ecom Group</div>
+          <ul class="trainer-achievements" style="margin-top: 1.5rem;">
+            <li>AI Lecturer tại Meta Ecom Uni.</li>
+            <li>Ban giám khảo/mentor các cuộc thi lớn: Ecom Challenge 2025, CBE Hackathon Việt Nam, Marketing Bigday 2025, Google Developer Groups On Campus Hackathon Vietnam.</li>
+            <li>Head of Organizing Committee tại EcomathonSEA - cuộc thi do TikTok For Business tổ chức.</li>
+            <li>Technical Manager x Kalodata - Triển khai ứng dụng AI cho hệ sinh thái phân tích dữ liệu TikTok Shop.</li>
+            <li>Project Manager x TikTok Shop Fashion - Hợp tác 20+ brand fashion triển khai hệ thống video AI: 29feb.closet, Bycamcam, Dinoman, Zutee...</li>
+            <li>Speaker & Trainer tại sự kiện & đại học: TikTok Shop Fashion, VECOM, Kalodata, ĐH Bách Khoa, ĐH Thương mại, FPT Polytechnic...</li>
+            <li>Kỹ sư CNTT, Đại học Bách khoa Hà Nội | Master of Data Science | Chứng nhận Anthropic, Google, Microsoft.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: SOCIAL PROOF -->
+  <section class="section-light">
+    <div class="reveal">
+      <div class="section-header">
+        <h2>Kết Quả <span>Thực Tế</span></h2>
+        <p>Hệ thống AI của chúng tôi đã mang lại những con số biết nói.</p>
+      </div>
+      <div class="proof-grid">
+        <div class="proof-card">
+          <!-- Placeholder hình ảnh kết quả -->
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80" alt="Doanh thu">
+          <p>Doanh thu tăng trưởng 300% sau 1 tháng.</p>
+        </div>
+        <div class="proof-card">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80" alt="Dashboard">
+          <p>Hệ thống vận hành mượt mà 24/7.</p>
+        </div>
+        <div class="proof-card">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80" alt="Đơn hàng">
+          <p>1,200 đơn hàng xử lý hoàn toàn tự động mỗi đêm.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: GIFTS -->
+  <section class="section-dark">
+    <div class="reveal">
+      <div class="gifts-container">
+        <h2>QUÀ TẶNG ĐỘC QUYỀN</h2>
+        <div class="gifts-total">TRỊ GIÁ: 15.500.000Đ</div>
+        <div class="gift-list">
+          <div class="gift-item">
+            <div class="gift-icon">🎁</div>
+            <div class="gift-info">
+              <h4>Bộ 50 Prompt Kịch Bản Livestream Chốt Đơn</h4>
+              <p>Chỉ cần điền tên sản phẩm, AI tự động viết kịch bản giật gân, cuốn hút người xem. (Trị giá 2.5tr)</p>
+            </div>
+          </div>
+          <div class="gift-item">
+            <div class="gift-icon">🎁</div>
+            <div class="gift-info">
+              <h4>Tài Khoản Sử Dụng AI Voice & Clone 3 Tháng</h4>
+              <p>Trải nghiệm công nghệ nhân bản đỉnh cao hoàn toàn miễn phí. (Trị giá 5tr)</p>
+            </div>
+          </div>
+          <div class="gift-item">
+            <div class="gift-icon">🎁</div>
+            <div class="gift-info">
+              <h4>Bản Đồ Mindmap Setup Hệ Thống A-Z</h4>
+              <p>Sơ đồ chi tiết từng bước, bạn chỉ cần nhìn và làm theo, không sợ làm sai kỹ thuật. (Trị giá 8tr)</p>
+            </div>
+          </div>
+        </div>
+        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">* Quà tặng chỉ dành cho 50 người đăng ký giữ chỗ và tham dự trực tiếp tới cuối buổi Zoom.</p>
+        <button class="btn-cta hero-cta-main open-modal-btn">NHẬN QUÀ & GIỮ CHỖ NGAY</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: FAQ -->
+  <section class="section-light">
+    <div class="reveal">
+      <div class="section-header">
+        <h2>Câu Hỏi <span>Thường Gặp</span></h2>
+      </div>
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question">Tôi mù công nghệ, không biết code thì có làm được không?</button>
+          <div class="faq-answer">
+            <p>Hoàn toàn được! Lộ trình hướng dẫn từ con số 0. Bạn chỉ cần biết click chuột, copy-paste và làm theo sơ đồ Mindmap là có thể setup thành công.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Máy tính của tôi cấu hình yếu, có dùng AI được không?</button>
+          <div class="faq-answer">
+            <p>Được. Mọi quá trình xử lý nặng đều chạy trên Cloud (máy chủ của nền tảng AI). Máy tính của bạn chỉ cần vào được trình duyệt web là đủ.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Livestream bằng AI có bị TikTok khóa kênh không?</button>
+          <div class="faq-answer">
+            <p>Trong module 3, chúng tôi sẽ chia sẻ "Bí Quyết Né Quét Từ Nền Tảng" với các thiết lập độ trễ, luồng OBS và kịch bản random giúp AI live an toàn 99% theo chính sách mới nhất.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 9: REGISTRATION -->
+  <section id="register" class="register-section">
+    <div class="reg-wrapper reveal">
+      <div class="reg-left">
+        <span class="section-tag" style="background: rgba(247,148,29,0.1); border: 1px solid rgba(247,148,29,0.3); color: var(--secondary);">🔥 EARLY BIRD</span>
+        <h2>ĐĂNG KÝ NGAY<br><span style="color: var(--secondary);">ƯU ĐÃI CÓ HẠN</span></h2>
+        <p>Số lượng giới hạn 100 người để đảm bảo chất lượng Zoom. Phòng có thể đầy trước khi sự kiện bắt đầu.</p>
+        <p>Hệ thống sẽ tự động đóng form khi đủ số lượng. Nhanh tay điền thông tin để nhận bộ quà tặng trị giá 15.500.000đ.</p>
+      </div>
+      <div class="reg-right">
+        <div class="reg-box">
+          <div class="reg-header">
+            <span class="reg-icon">⚡</span>
+            <h3>Đăng ký tham dự</h3>
+            <p>Điền thông tin của bạn để giữ chỗ duy nhất hôm nay</p>
+          </div>
+          <div class="reg-price">
+            <div class="price-row">
+              <span>Tổng giá trị thực:</span>
+              <span class="price-old">15.500.000đ</span>
+            </div>
+            <div class="price-row highlight">
+              <span>Chi phí hôm nay:</span>
+              <span class="price-new">MIỄN PHÍ</span>
+            </div>
+          </div>
+          
+          <form id="regForm" novalidate>
+            <div class="hp-field" aria-hidden="true">
+              <label for="website">Website</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="form-group">
+              <input type="text" id="fullname" name="fullname" placeholder="Họ và tên của bạn *" required>
+              <div class="form-error">Vui lòng nhập họ tên</div>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" name="email" placeholder="Địa chỉ Email *" required inputmode="email">
+              <div class="form-error">Vui lòng nhập email hợp lệ</div>
+            </div>
+            <div class="form-group">
+              <input type="tel" id="phone" name="phone" placeholder="Số Điện Thoại (Có dùng Zalo) *" required inputmode="tel">
+              <div class="form-error">Vui lòng nhập số điện thoại hợp lệ</div>
+            </div>
+            
+            <div class="payment-method">
+              <span>🎟️</span>
+              <div class="payment-text">Workshop Miễn Phí<br><span style="color:var(--text-secondary); font-size:0.8rem; font-weight:normal;">Xác nhận vé qua Zalo & Email</span></div>
+            </div>
+
+            <button type="submit" class="form-submit" id="submitBtn">XÁC NHẬN ĐĂNG KÝ</button>
+            <p style="text-align: center; font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem;">* Thông tin được bảo mật tuyệt đối.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCRIPT XỬ LÝ -->
+  <script>
+    // Reveal Animation
+    var ro = new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting) e.target.classList.add('active');});
+    },{threshold: 0.1});
+    document.querySelectorAll('.reveal').forEach(function(el){ ro.observe(el); });
+
+    // FAQ Toggle
+    document.querySelectorAll('.faq-question').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var item = this.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+
+    // Countdown Timer logic (Fake countdown for demo)
+    function updateCountdown() {
+      let d = parseInt(document.getElementById('cd-days').innerText);
+      let h = parseInt(document.getElementById('cd-hours').innerText);
+      let m = parseInt(document.getElementById('cd-mins').innerText);
+      let s = parseInt(document.getElementById('cd-secs').innerText);
+
+      s--;
+      if(s < 0) { s = 59; m--; }
+      if(m < 0) { m = 59; h--; }
+      if(h < 0) { h = 23; d--; }
+      if(d < 0) { d = 0; h = 0; m = 0; s = 0; } // Stop at 0
+
+      document.getElementById('cd-days').innerText = d < 10 ? '0'+d : d;
+      document.getElementById('cd-hours').innerText = h < 10 ? '0'+h : h;
+      document.getElementById('cd-mins').innerText = m < 10 ? '0'+m : m;
+      document.getElementById('cd-secs').innerText = s < 10 ? '0'+s : s;
+    }
+    setInterval(updateCountdown, 1000);
+
+    // Smooth Scroll Logic cho các nút bấm Đăng ký
+    document.querySelectorAll('.open-modal-btn').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        var target = document.getElementById('register');
+        if(target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Form Submit
+    var WEBHOOK_URL = 'https://YOUR_WEBHOOK_URL_HERE'; // Chỉnh Webhook tại đây
+    var regForm = document.getElementById('regForm');
+    var submitBtn = document.getElementById('submitBtn');
+
+    function validateField(i){
+      var g = i.closest('.form-group'); if(!g) return true;
+      var ok = true; var v = i.value.trim();
+      if(i.required && !v) ok = false;
+      else if(i.type === 'email' && v) ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/i.test(v);
+      else if(i.type === 'tel' && v) ok = /^(0[0-9]{9}|\+84[0-9]{9})$/.test(v);
+      if(ok){ g.classList.remove('has-error'); } else { g.classList.add('has-error'); }
+      return ok;
+    }
+    
+    regForm.querySelectorAll('input[required]').forEach(function(i){
+      i.addEventListener('blur', function(){ validateField(this); });
+      i.addEventListener('input', function(){ if(this.parentElement.classList.contains('has-error')) validateField(this); });
+    });
+
+    regForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(submitBtn.disabled) return;
+      if(document.getElementById('website').value) return; 
+      
+      var ok = true;
+      regForm.querySelectorAll('input[required]').forEach(function(i){ if(!validateField(i)) ok = false; });
+      if(!ok) return;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'ĐANG XỬ LÝ...';
+
+      var payload = {
+        event: 'lead',
+        fullname: document.getElementById('fullname').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
+        timestamp: new Date().toISOString()
+      };
+
+      fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(payload)
+      })
+      .then(function(r){
+        if(r.ok){
+          window.location.href = 'thankyou.html';
+        } else {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'XÁC NHẬN ĐĂNG KÝ';
+          alert('Lỗi gửi đi, vui lòng thử lại.');
+        }
+      })
+      .catch(function(err){
+        window.location.href = 'thankyou.html';
+        console.error(err);
+      });
+    });
+  </script>
+</body>
+</html>

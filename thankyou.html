@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng Ký Thành Công — Meta Ecom Uni</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f8fafc;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      color: #1e293b;
+    }
+    .thankyou-container {
+      background: #ffffff;
+      max-width: 600px;
+      width: 90%;
+      padding: 3rem 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .icon-success {
+      width: 80px;
+      height: 80px;
+      background: #22c55e;
+      color: white;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    .icon-success svg {
+      width: 40px;
+      height: 40px;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #160E44; /* Màu theo guideline */
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #475569;
+      margin-bottom: 2rem;
+    }
+    .zalo-btn {
+      display: inline-block;
+      background: #0068ff;
+      color: #ffffff;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0, 104, 255, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .zalo-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 104, 255, 0.4);
+    }
+    .warning-text {
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      color: #ED1C24; /* Màu đỏ guideline */
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="thankyou-container">
+    <div class="icon-success">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+      </svg>
+    </div>
+    <h1>Đăng ký thành công!</h1>
+    <p>Cảm ơn bạn đã đăng ký tham gia Workshop. Để hoàn tất thủ tục và nhận tài liệu chuẩn bị, vui lòng tham gia vào Nhóm Zalo kín của lớp học ngay dưới đây.</p>
+    
+    <a href="https://zalo.me/g/YOUR_ZALO_GROUP_ID" target="_blank" class="zalo-btn">
+      💬 THAM GIA NHÓM ZALO
+    </a>
+    
+    <p class="warning-text">* Bắt buộc: Link Zoom sẽ chỉ được gửi trong nhóm Zalo này.</p>
+  </div>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    // TODO: Gắn YOUR_PIXEL_ID
+    // fbq('init', 'YOUR_PIXEL_ID');
+    // fbq('track', 'Lead'); // Ghi nhận Lead khi vào trang Thank You
+  </script>
+</body>
+</html>
